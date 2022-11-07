@@ -32,6 +32,7 @@ const Display = styled.div`
 	grid-column-end: span 4;
 	padding: 0 24px;
 `;
+
 type Props = {}
 
 export default function Calculator({ }: Props) {
@@ -100,17 +101,18 @@ export default function Calculator({ }: Props) {
 	}
 
 	const selectOperator = (operation: string) => {
+
 		if (prevValue) {
 			const val = calculate()
 			setCurrentValue(`${val}`)
-			setPrevValue(`${val}`)
 		}
 		else {
 			setPrevValue(currentValue)
 		}
 		setOperation(operation)
 		setOverwrite(true)
-	}
+	};
+
 	return (
 		<Container>
 			<Grid>
